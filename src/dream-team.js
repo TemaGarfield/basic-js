@@ -13,10 +13,57 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function createDreamTeam(/* members */ members) {
+
+  if (!Array.isArray(members) || members.length === 0) {
+    return false;
+  }
+
+  let membersString = [];
+  for (let i = 0; i < members.length; i++) {
+    if (typeof members[i] === 'string') membersString.push(members[i]);
+  }
+
+  if (membersString.length === 0) {
+    return false;
+  }
+
+  for (let i = 0; i < membersString.length; i++) {
+    membersString[i] = membersString[i].replace(/\s/g, '');
+    membersString[i] = membersString[i].toUpperCase();
+  }
+
+  membersString.sort();
+  let dreamTeam = '';
+  for (let i = 0; i < membersString.length; i++) {
+    dreamTeam += membersString[i][0];
+  }
+
+  return dreamTeam.toUpperCase();
+
+  // for (let i = 0; i < members.length; i++) {
+  //   if (typeof members[i] === 'string') {
+  //     members[i] = members[i].replace(/\s/g, '');
+  //   }
+  // }
+
+  // let dreamTeam = '';
+  // members.sort();
+
+  // for (let i = 0; i < members.length; i++) {
+  //   if (typeof members[i] === 'string') {
+  //     dreamTeam += members[i][0];
+  //   }
+  // }
+
+  // if (dreamTeam === '') {
+  //   return false;
+  // }
+
+  // return dreamTeam.toUpperCase();
 }
+
+console.log(typeof null);
 
 module.exports = {
   createDreamTeam
