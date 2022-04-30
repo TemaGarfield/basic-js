@@ -40,30 +40,9 @@ function createDreamTeam(/* members */ members) {
   }
 
   return dreamTeam.toUpperCase();
-
-  // for (let i = 0; i < members.length; i++) {
-  //   if (typeof members[i] === 'string') {
-  //     members[i] = members[i].replace(/\s/g, '');
-  //   }
-  // }
-
-  // let dreamTeam = '';
-  // members.sort();
-
-  // for (let i = 0; i < members.length; i++) {
-  //   if (typeof members[i] === 'string') {
-  //     dreamTeam += members[i][0];
-  //   }
-  // }
-
-  // if (dreamTeam === '') {
-  //   return false;
-  // }
-
-  // return dreamTeam.toUpperCase();
 }
 
-console.log(typeof null);
+console.log();
 
 module.exports = {
   createDreamTeam
